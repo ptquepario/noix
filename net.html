@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meu Amor</title>
+    <style>
+        body {
+            background-color: #ffe6f2;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            width: 100vw;
+            overflow-y: scroll;
+        }
+        
+        h1 {
+            color: #ff66cc;
+            margin-top: 50px;
+        }
+        
+        .love-message {
+            width: 600px;
+            font-size: 24px;
+            margin-top: 20px;
+            text-align: justify;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.651);
+            padding: 20px;
+           
+        }
+        
+        #love-meter {
+            margin-top: 50px;
+        }
+        
+        #love-meter input[type="range"] {
+            width: 300px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        
+        #love-meter p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        
+        #love-meter p span {
+            font-weight: bold;
+            color: #ff66cc;
+        }
+
+        .heart {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-image: url('growing-heart_1f497.png'); /* Substitua pelo caminho para a imagem do coração */
+            background-repeat: no-repeat;
+            background-size: contain;
+            animation: heartAnimation 3s linear infinite;
+        }
+        
+        @keyframes heartAnimation {
+            0% {
+                transform: scale(1) rotate(0deg);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.5) rotate(45deg);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1) rotate(0deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="background">
+        <!-- Adicione quantos elementos de coração desejar -->
+        <div class="heart" style="top: 20%; left: 25%;"></div>
+        <div class="heart" style="top: 50%; left: 40%;"></div>
+        <div class="heart" style="top: 70%; left: 70%;"></div>
+        <!-- -->
+    </div>
+    <h1>BOM DIA, MEU AMORRR!!!</h1>
+
+    <video style="height: 800px;" src="../You🔒♥️.MOV" controls></video>
+    
+    <center>
+        <div class="love-message">
+            SÓ PRA VC TER UM ÓTIMO DIA E SE LEMBRAR QUE TE AMO MUITOOOO!
+        </div>
+    </center>
+    
+    <div id="love-meter">
+        <h2>Medidor de Amor</h2>
+        <input type="range" min="0" max="100" value="0" step="1" id="love-slider">
+        <p>O nosso amor está em <span id="love-percentage">100%</span></p>
+    </div>
+    
+    <script>
+        const loveSlider = document.getElementById("love-slider");
+        const lovePercentage = document.getElementById("love-percentage");
+        
+        loveSlider.addEventListener("input", function() {
+            const percentage = loveSlider.value;
+            lovePercentage.textContent = percentage + "%";
+        });
+    </script>
+</body>
+</html>

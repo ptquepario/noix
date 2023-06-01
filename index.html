@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Amor em Carregamento</title>
+    <style>
+        body {
+            background-color: #ffddee;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 150px;
+        }
+        
+        h1 {
+            color: #ff66cc;
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+        
+        #progress-bar-container {
+            width: 300px;
+            height: 20px;
+            background-color: #ddd;
+            margin: 0 auto;
+            margin-top: 50px;
+            overflow: hidden;
+        }
+        
+        #progress-bar {
+            width: 0;
+            height: 100%;
+            background-color: #ff66cc;
+            transition: width 1s ease-in-out;
+        }
+        
+        #progress-text {
+            margin-top: 10px;
+            font-size: 24px;
+            color: #ff66cc;
+        }
+    </style>
+</head>
+<body>
+    <h1>BOM DIA, SUNSHINEEEEE!!!</h1>
+    
+    <div id="progress-bar-container">
+        <div id="progress-bar"></div>
+    </div>
+    
+    <div id="progress-text">0%</div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const progressBar = document.getElementById("progress-bar");
+            const progressText = document.getElementById("progress-text");
+            let width = 0;
+            let intervalId = setInterval(increaseWidth, 20);
+            
+            function increaseWidth() {
+                if (width >= 100) {
+                    clearInterval(intervalId);
+                    document.querySelector("h1").textContent = "Amor Carregado!";
+                    progressText.textContent = "100%";
+                    
+                    // Redirecionar para a página linkada após 2 segundos
+                    setTimeout(function() {
+                        window.location.href = "net.html";
+                    }, 2000);
+                } else {
+                    width++;
+                    progressBar.style.width = width + "%";
+                    progressText.textContent = width + "%";
+                }
+            }
+        });
+    </script>
+</body>
+</html>
