@@ -94,7 +94,7 @@
     
     <div id="love-meter">
         <h2>Medidor de Amor</h2>
-        <input type="range" min="0" max="100" value="0" step="1" id="love-slider">
+        <input type="range"  max="100" value="100" step="100" id="love-slider">
         <p>O nosso amor está em <span id="love-percentage">100%</span></p>
     </div>
     
@@ -104,7 +104,7 @@
         
         loveSlider.addEventListener("input", function() {
             const percentage = loveSlider.value;
-            lovePercentage.textContent = percentage + "%";
+            lovePercentage.textContent = percentage + "100%";
         });
     </script>
 </body>
